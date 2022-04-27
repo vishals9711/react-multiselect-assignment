@@ -1,0 +1,22 @@
+.checkbox-div {
+    display: flex;
+    height: 24px;
+    padding: 8px;
+    .input-checkbox {
+      margin-top: auto;
+      margin-bottom: auto;
+      transform: scale(1.5);
+      accent-color: black;
+    }
+    .input-value {
+      margin: auto;
+      margin-left: 12px;
+    }
+    .checkbox-description {
+      display: flex;
+      margin-top: auto;
+      margin-left: auto;
+      margin-bottom: auto;
+    }
+  }
+  
