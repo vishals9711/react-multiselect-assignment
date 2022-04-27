@@ -1,16 +1,17 @@
-.create-asset-btn{
-    display:flex;
+.create-asset-btn {
+    display: flex;
     width: 100%;
     background-color: transparent;
     border: none;
     cursor: pointer;
-    .create-asset-main-div{
-        display: flex;
-        .plus-svg{
-            height: 24px;
-            width: 24px;
-            margin-top: auto;
-            margin-bottom: auto;
-        }
+    .create-asset-main-div {
+      display: flex;
+      .plus-svg {
+        height: 24px;
+        width: 24px;
+        margin-top: auto;
+        margin-bottom: auto;
+      }
     }
-}
+  }
+  

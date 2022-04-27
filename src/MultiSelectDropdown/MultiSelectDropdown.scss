@@ -1,65 +1,64 @@
 .chevron-class {
-    height: 16px;
-    width: 16px;
-  }
-  .multi-select-dropdown {
+  height: 16px;
+  width: 16px;
+}
+.multi-select-dropdown {
+  display: flex;
+  flex-direction: column;
+  .dropdown-subclass {
     display: flex;
     flex-direction: column;
-    .dropdown-subclass {
-      display: flex;
-      flex-direction: column;
-      width: 26rem;
-      margin: auto;
-      .dropdown-subheading {
-        text-align: left;
-        margin-bottom: 6px;
-        font-size: 12px;
-        color: grey;
-        font-weight: 600;
-      }
-    }
-    .dropdown-toggle {
-      width: 26rem;
-      height: 2.5rem;
-      display: flex;
-      margin: auto;
-      flex-direction: row;
+    width: 26rem;
+    margin: auto;
+    .dropdown-subheading {
+      text-align: left;
+      margin-bottom: 6px;
+      font-size: 12px;
       color: grey;
-      border: 1px solid;
-      margin-bottom: 8px;
-      .toggle-div {
-        height: 100%;
-        display: flex;
-        flex-direction: row;
+      font-weight: 600;
+    }
+  }
+  .dropdown-toggle {
+    width: 26rem;
+    height: 2.5rem;
+    display: flex;
+    margin: auto;
+    flex-direction: row;
+    color: grey;
+    border: 1px solid;
+    margin-bottom: 8px;
+    .toggle-div {
+      height: 100%;
+      display: flex;
+      flex-direction: row;
+      flex-grow: 1;
+      .dropdown-placeholder {
+        height: 32px;
+        margin-top: auto;
+        margin-bottom: auto;
+        font-size: 1rem;
+        border: none;
         flex-grow: 1;
-        .dropdown-placeholder {
-          height: 32px;
-          margin-top: auto;
-          margin-bottom: auto;
-          font-size: 1rem;
-          border: none;
-          flex-grow: 1;
-        }
-        .dropdown-placeholder:focus {
-          outline: none;
-        }
-        .chevron-class {
-          margin-left: auto;
-          margin-top: auto;
-          margin-bottom: auto;
-          fill: grey;
-          margin-right: 8px;
-        }
+      }
+      .dropdown-placeholder:focus {
+        outline: none;
+      }
+      .chevron-class {
+        margin-left: auto;
+        margin-top: auto;
+        margin-bottom: auto;
+        fill: grey;
+        margin-right: 8px;
       }
     }
   }
-  .dropdown-groupName {
-    text-align: left;
-    margin: 8px;
-    font-weight: 600;
-    font-size: 12px;
-  }
-  .dropdown-group:not(:last-child) {
-    border-bottom: 1px solid;
-  }
-  
+}
+.dropdown-groupName {
+  text-align: left;
+  margin: 8px;
+  font-weight: 600;
+  font-size: 12px;
+}
+.dropdown-group:not(:last-child) {
+  border-bottom: 1px solid;
+}

@@ -119,7 +119,10 @@ const MultiSelectDropdown = (props: IMultiSelect): React.ReactElement => {
           const selectAllFind = newSelectAllData.find(
             (data) => data.groupAssetId === groupId
           );
-          if (selectAllFind) selectAllFind.checked = group.groupAssets.every((data) => data.checked);
+          if (selectAllFind)
+            selectAllFind.checked = group.groupAssets.every(
+              (data) => data.checked
+            );
           setSelectAllData([...newSelectAllData]);
         }
       }
@@ -145,7 +148,11 @@ const MultiSelectDropdown = (props: IMultiSelect): React.ReactElement => {
 
   const checkIfAllSelected = () => {
     const newSelectedData = [...selectAllData];
-    if (newSelectedData.filter(data => data.groupAssetId !== "All").every(data => data.checked)) {
+    if (
+      newSelectedData
+        .filter((data) => data.groupAssetId !== "All")
+        .every((data) => data.checked)
+    ) {
       newSelectedData.forEach((data) => (data.checked = true));
       setSelectAllData([...newSelectedData]);
     } else {
@@ -153,11 +160,9 @@ const MultiSelectDropdown = (props: IMultiSelect): React.ReactElement => {
       if (found) {
         found.checked = false;
         setSelectAllData([...newSelectedData]);
-
       }
     }
-  }
-
+  };
 
   const selectedAssetsHandler = (
     data: {
@@ -188,16 +193,23 @@ const MultiSelectDropdown = (props: IMultiSelect): React.ReactElement => {
     }
   };
 
-  const handleAddAsset = (groupId: string | number, assetName: string, assetDescription: string) => {
-    const newDropData = dropdownData.find(data => data.groupId.toString() === groupId);
-    if (newDropData) newDropData.groupAssets.push({
-      assetId: Math.floor(Math.random() * 1000),
-      checked: false,
-      data: assetName,
-      description: assetDescription.length ? assetDescription : undefined
-    });
-    setAddAssetDiv(false)
-  }
+  const handleAddAsset = (
+    groupId: string | number,
+    assetName: string,
+    assetDescription: string
+  ) => {
+    const newDropData = dropdownData.find(
+      (data) => data.groupId.toString() === groupId
+    );
+    if (newDropData)
+      newDropData.groupAssets.push({
+        assetId: Math.floor(Math.random() * 1000),
+        checked: false,
+        data: assetName,
+        description: assetDescription.length ? assetDescription : undefined,
+      });
+    setAddAssetDiv(false);
+  };
 
   const checkIfAllChecked = (groupId: string | number): boolean =>
     selectAllData.find((data) => data.groupAssetId === groupId)?.checked ||
@@ -215,29 +227,33 @@ const MultiSelectDropdown = (props: IMultiSelect): React.ReactElement => {
               !toggleDropdown && setToggleDropdown(!toggleDropdown)
             }
           >
-            {selectedAssets.map((data, index) => (
-              <PillComponent
-                key={index}
-                onChange={(res) => checkboxChangeHandler(res)}
-                value={data.value}
-                assetId={data.assetId}
-                groupId={data.groupId}
-              />
-            ))}
-
+            {selectedAssets.map(
+              (data, index) =>
+                index < 2 && (
+                  <PillComponent
+                    key={index}
+                    onChange={(res) => checkboxChangeHandler(res)}
+                    value={data.value}
+                    assetId={data.assetId}
+                    groupId={data.groupId}
+                  />
+                )
+            )}
             <div className="toggle-div">
               <input
                 className="dropdown-placeholder"
                 placeholder={dropdownPlaceHolder}
                 disabled={!toggleDropdown}
-                onChange={(e) => handleSearchChange(e.target.value.trim().toLowerCase())}
+                onChange={(e) =>
+                  handleSearchChange(e.target.value.trim().toLowerCase())
+                }
               />
               <div className="chevron-class">
                 <YourSvg
                   style={{ transform: rotate, transition: "all 0.2s linear" }}
                   onClick={() => {
-                    if (toggleDropdown) setAddAssetDiv(false)
-                    setToggleDropdown(!toggleDropdown)
+                    if (toggleDropdown) setAddAssetDiv(false);
+                    setToggleDropdown(!toggleDropdown);
                   }}
                 />
               </div>
@@ -295,12 +311,20 @@ const MultiSelectDropdown = (props: IMultiSelect): React.ReactElement => {
             </>
           </div>
         }
-        {addAssetDiv && <CreateAssetComponent groups={dropdownData.map(data => {
-          return {
-            groupId: data.groupId,
-            groupName: data.groupName
-          }
-        })} onCancel={() => setAddAssetDiv(false)} onAdd={(e) => handleAddAsset(e.groupId, e.assetName, e.assetDescription)} />}
+        {addAssetDiv && (
+          <CreateAssetComponent
+            groups={dropdownData.map((data) => {
+              return {
+                groupId: data.groupId,
+                groupName: data.groupName,
+              };
+            })}
+            onCancel={() => setAddAssetDiv(false)}
+            onAdd={(e) =>
+              handleAddAsset(e.groupId, e.assetName, e.assetDescription)
+            }
+          />
+        )}
       </div>
     </div>
   );

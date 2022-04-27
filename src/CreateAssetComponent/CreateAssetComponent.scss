@@ -1,31 +1,32 @@
-.create-asset-div{
+.create-asset-div {
     display: flex;
     flex-direction: column;
     padding: 8px;
-    .create-asset-select{
-        padding: 8px;
-        margin-bottom: 8px;
+    .create-asset-select {
+      padding: 8px;
+      margin-bottom: 8px;
     }
-    .create-asset-input{
-        padding: 8px;
-        margin-bottom: 8px;
+    .create-asset-input {
+      padding: 8px;
+      margin-bottom: 8px;
     }
-    .button-div{
+    .button-div {
+      padding: 8px;
+      .add-button {
         padding: 8px;
-        .add-button{
-            padding: 8px;
-            margin-right: 8px;
-            border-radius: 4px;
-            background-color: #007bff;
-            border: none;
-            cursor: pointer;
-        }
-        .cancel-button{
-            padding: 8px;
-            border-radius: 4px;
-            background-color: #c82333;
-            border: none;
-            cursor: pointer;
-        }
+        margin-right: 8px;
+        border-radius: 4px;
+        background-color: #007bff;
+        border: none;
+        cursor: pointer;
+      }
+      .cancel-button {
+        padding: 8px;
+        border-radius: 4px;
+        background-color: #c82333;
+        border: none;
+        cursor: pointer;
+      }
     }
-}
+  }
+  
